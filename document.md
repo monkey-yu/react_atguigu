@@ -31,3 +31,8 @@
     （2）配置文件: src/setupProxy.js 
         a).优点：可以配置多个代理，可以灵活的控制请求是否走代理。
         b).缺点：配置繁琐，前端请求资源时必须加前缀。
+8. 连续解构赋值 + 重命名。
+    let obj={a:{b:{c:1}}}
+    const {a: {b: {c:data}}} = obj
+    console.log(data);  // 
+9. github案例 -- github请求地址：https://api.github.com/search/users?q=xxx  这个接口服务端cors配置了，所以没有跨域问题
