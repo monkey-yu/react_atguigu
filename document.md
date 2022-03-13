@@ -16,3 +16,18 @@
     （5）如果孙组件要修改祖组件的state,也要通过传父，再传父。
     （6）注意defaultChecked和checked的区别。defaultChecked只在第一次进来时调用，后面更新值不变。
 5. 安装prop-types库来限制props. 安装： npm i prop-types
+6. 常用的ajax库：
+    （1）jquery:比较重，不建议。
+    （2）axios:轻量级，建议使用。特点：
+        a).封装XmlHttpRequest对象的ajax
+        b). promise 风格
+        c).可以用在浏览器端和node服务器端。
+7. react脚手架配置代理：
+    （1）在package.json中追加配置： "proxy":"http://localhost:5000"
+        特点：
+        a).优点：配置简单，前端请求资源时可以不加任何前缀。
+        b).缺点：不能配置多个代理。
+        c).工作方式：上述配置，当请求了3000不存在的资源时，会去把请求转发给5000.
+    （2）配置文件: src/setupProxy.js 
+        a).优点：可以配置多个代理，可以灵活的控制请求是否走代理。
+        b).缺点：配置繁琐，前端请求资源时必须加前缀。
