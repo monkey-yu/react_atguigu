@@ -9,21 +9,11 @@ import Search from './components/Search'
 import GithubList from './components/GithubList'
 import './App.css';
 export default class App extends Component{
-  // 
-  state = {
-    users:[],
-    isFirst: true,
-    isLoad: false,
-    err: ''
-  }
-  updateAppState = (state)=> {
-    this.setState(state)
-  }
   render() {
 		return (
 			<div className="container">
-				<Search updateAppState={this.updateAppState}/>
-				<GithubList {...this.state} />
+				<Search />
+				<GithubList />
 			</div>
 		)
 	}

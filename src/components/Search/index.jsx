@@ -1,17 +1,23 @@
 import React, { Component } from 'react'
+import PubSub from 'pubsub-js';
 import axios from 'axios'
 
 export default class Search extends Component {
 	handleSearch =()=> {
-		this.props.updateAppState({isFirst:false,isLoad:true});
+		// this.props.updateAppState({isFirst:false,isLoad:true});
+		PubSub.publish('updateState',{isFirst:false,isLoad:true})
 		// 连续解构赋值 + 重命名
 		const {keyWordElem:{value:keyword}} = this;
 		axios.get(`https://api.github.com/search/users?q=${keyword}`).then(
 			response => {
-				this.props.updateAppState({isLoad:false,users:response.data.items});
+				// this.props.updateAppState({isLoad:false,users:response.data.items});
+				PubSub.publish('updateState',{isLoad:false,users:response.data.items})
+
 			},
 			error =>{
-				this.props.updateAppState({isLoad:false,err:error.message});
+				// this.props.updateAppState({isLoad:false,err:error.message});
+				PubSub.publish('updateState',{isLoad:false,err:error.message})
+
 			}  
 		)
 	}

@@ -35,4 +35,13 @@
     let obj={a:{b:{c:1}}}
     const {a: {b: {c:data}}} = obj
     console.log(data);  // 
-9. github案例 -- github请求地址：https://api.github.com/search/users?q=xxx  这个接口服务端cors配置了，所以没有跨域问题
+9. github案例 -- github请求地址：https://api.github.com/search/users?q=xxx  这个接口服务端cors配置了，所以没有跨域问题. 
+    产品思维：考虑第一次页面载入显示状态、请求数据过程的loading状态、 返回错误的处理状态
+10. 父子通信传递：
+    父向子传递： 使用props
+    子向父传递： 父先向子通过props传递一个函数，子在合适的时机调用这个函数（传参数），来实现子向父传递。
+11. 消息订阅-发布机制 : 发布（publish）、订阅（subscribe）
+    工具库：pubsub-js
+    想要使用数据的组件，在componentDidMount钩子中去订阅（subscribe）消息；在componentWillUnMount钩子中取消订阅；
+    想要发送数据的组件里，使用发布(publish)消息。
+    
