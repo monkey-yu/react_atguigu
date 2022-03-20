@@ -1,6 +1,6 @@
 
 import React,{Component} from 'react';
-import {NavLink, Route, Routes} from 'react-router-dom';
+import {NavLink, Route, Routes,Navigate} from 'react-router-dom';
 // import Hello from './components/Hello';
 // import Welcome from './components/Welcome';
 // import Header from './components/Header/Header';
@@ -29,8 +29,11 @@ export default class App extends Component{
 				<div>
 					<Routes>
 						{/* react-router-dom 版本不同，里面参数名不同，这里用element并且值是组件 */}
-						<Route path='/about' element={<About/>}></Route>
+						{/* 有嵌套路由，path后面要加/*，否则不会往下匹配 */}
+						<Route path='/about/*' element={<About/>}></Route>
 						<Route path='/other' element={<Other/>}></Route>
+						{/* redirect 被弃用，使用下面一行来实现重定向 */}
+						{/* <Route path="*" element={<Navigate to="/other" />} /> */}
 					</Routes>
 				</div>
 			</div>
