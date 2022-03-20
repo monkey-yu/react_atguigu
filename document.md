@@ -44,4 +44,35 @@
     工具库：pubsub-js
     想要使用数据的组件，在componentDidMount钩子中去订阅（subscribe）消息；在componentWillUnMount钩子中取消订阅；
     想要发送数据的组件里，使用发布(publish)消息。
-    
+    适用于任意组件之间通信。
+12. ajax请求： 
+    (1) xhr(xmlHttpRequest) 、jquery(该库是对xhr的封装)、axios(该库是对xhr的封装);
+    (2) fetch（关注分离的设计思想），这个是window上的一个方法。不是第三方库，而且是promise风格的。 老版浏览器可能不支持。
+13. SPA： 
+    a.单页面应用 
+    b.整个页面只有一个页面 
+    c.点击页面中的链接不会刷新，只做局部刷新。
+    d. 数据都需要通过ajax来请求，并在前端异步展示。
+14. 路由： key--value
+        前端路由： path -- component
+        后端路由： path -- function
+        路由原理：H5的history 
+        router模式：browserRouter、hashRouter
+
+15. react-router-dom: react在web用的库。
+    路由的基本使用：
+    a. 明确好界面中的导航区，展示区；
+    b. 导航区的a标签改为<Link>标签：
+        <Link to="/xxx">Demo</Link>
+    c. 展示区写Route标签进行路由匹配：
+        <Route path="/xxx" component={Demo}/>
+        注意新版本的Route写法不同
+        <Route path="/xxx" element={<Demo/>}/>
+    d. App的最外侧包裹一个<BrowserRouter>或<HashRouter>。
+16. 一般组件： 通常写在components文件夹中，可以接收正常的props;
+    路由组件：是在路由匹配后渲染的组件，通常写在pages文件夹中，可以接收到3个固定参数有：history、location、match。
+17. NavLink与封装NavLink:
+    a. NavLink可以实现路由链接的高亮，通过activeClassName指定样式名；
+    b. 标签体内容是一个特殊的标签属性；
+    c. 通过this.props.children可以获取标签体内容。
+18. 
