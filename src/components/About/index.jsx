@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {NavLink, Route, Routes} from 'react-router-dom';
-import News from './news';
+import {NavLink, Route, Switch} from 'react-router-dom';
+import News from './News';
 import Message from './Message';
 export default class About extends Component {
   render() {
@@ -17,11 +17,11 @@ export default class About extends Component {
                 </li>
             </ul>
             <hr />
-            <Routes>
+            <Switch>
                 {/* 路由匹配这里不加父路由 */}
-                <Route path='/news' element={<News/>}></Route>
-				<Route path='/message' element={<Message/>}></Route>
-            </Routes>
+                <Route path='/about/news' component={News}></Route>
+				<Route path='/about/message' component={Message}></Route>
+            </Switch>
         </div>
      
     )
