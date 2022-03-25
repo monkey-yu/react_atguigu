@@ -6,12 +6,6 @@ const detailData = [
     {id:'03',content:'内容3'}
 ]
 export default class Detail extends Component {
-  handleBack = () => {
-    this.props.history.goBack()
-  }
-  handleForward = () => {
-    this.props.history.goForward()
-  }
   render() {
       console.log('Detail组件接收',this.props);
       const {id,title} = this.props.match.params;
@@ -26,9 +20,6 @@ export default class Detail extends Component {
             <li>TITLE: {title}</li>
             <li>CONTENT: {findResult.content}</li>
         </ul>
-        <button onClick={() => this.handleBack()}>后退</button>&nbsp;
-        <button onClick={() => this.handleForward()}>前进</button>&nbsp;
-
       </div>
     )
   }

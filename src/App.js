@@ -10,12 +10,13 @@ import {NavLink, Route, Switch, Redirect} from 'react-router-dom';
 // import GithubList from './components/GithubList'
 import About from './components/About';
 import Other from './components/Other';
+import HeaderRouter from './components/HeaderRouter';
 import './App.css';
 export default class App extends Component{
   render() {
 		return (
 			<div className="container">
-				<h1>learn react router</h1>
+				<HeaderRouter />
 				<br/>
 				<ul>
 					<li>

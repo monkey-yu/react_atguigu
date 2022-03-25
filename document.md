@@ -108,4 +108,4 @@
     this.props.history.goForward()
     this.props.history.goBack()
     this.props.history.go(n)
-24. 
+24. withRouter是将一般组件加工成路由组件，使一般组件身上也可以有路由组件所有的特性，即history、location、match。
