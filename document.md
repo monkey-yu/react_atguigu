@@ -34,7 +34,7 @@
 8. 连续解构赋值 + 重命名。
     let obj={a:{b:{c:1}}}
     const {a: {b: {c:data}}} = obj
-    console.log(data);  // 
+    console.log(data);  // 1
 9. github案例 -- github请求地址：https://api.github.com/search/users?q=xxx  这个接口服务端cors配置了，所以没有跨域问题. 
     产品思维：考虑第一次页面载入显示状态、请求数据过程的loading状态、 返回错误的处理状态
 10. 父子通信传递：
@@ -109,3 +109,9 @@
     this.props.history.goBack()
     this.props.history.go(n)
 24. withRouter是将一般组件加工成路由组件，使一般组件身上也可以有路由组件所有的特性，即history、location、match。
+25. antd的样式按需加载参考这个学习： https://www.bilibili.com/video/BV1wy4y1D7JT?p=95&      spm_id_from=pageDriver
+26. antd自定义主题参考这个学习： https://www.bilibili.com/video/BV1wy4y1D7JT?p=96
+27. redux:集中式管理多个组件等共享状态
+
+
+学到96
