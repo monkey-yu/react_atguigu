@@ -111,7 +111,11 @@
 24. withRouter是将一般组件加工成路由组件，使一般组件身上也可以有路由组件所有的特性，即history、location、match。
 25. antd的样式按需加载参考这个学习： https://www.bilibili.com/video/BV1wy4y1D7JT?p=95&      spm_id_from=pageDriver
 26. antd自定义主题参考这个学习： https://www.bilibili.com/video/BV1wy4y1D7JT?p=96
-27. redux:集中式管理多个组件等共享状态
+27. redux:集中式管理多个组件等共享状态。
+    学到3个api: 
+        (1) store.getState() 获取store中的状态；
+        (2) store.dispatch({type,data})  分发一个action,包含两个参数：type,data
+        (3) store.subscribe() 检测store中状态有变化，用来重新让组件render
 
 
-学到96
+学到101
