@@ -112,10 +112,13 @@
 25. antd的样式按需加载参考这个学习： https://www.bilibili.com/video/BV1wy4y1D7JT?p=95&      spm_id_from=pageDriver
 26. antd自定义主题参考这个学习： https://www.bilibili.com/video/BV1wy4y1D7JT?p=96
 27. redux:集中式管理多个组件等共享状态。
+    redux是民间发布的一个库，可以与react,vue,angular配合使用。
+    安装： npm i redux
     学到3个api: 
         (1) store.getState() 获取store中的状态；
         (2) store.dispatch({type,data})  分发一个action,包含两个参数：type,data
         (3) store.subscribe() 检测store中状态有变化，用来重新让组件render
+28. react-redux: 是官方facebook出品的专门用于react的状态管理库。
+    安装： npm i react-redux
 
-
-学到101
+学到106
