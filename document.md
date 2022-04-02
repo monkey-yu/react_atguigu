@@ -120,5 +120,15 @@
         (3) store.subscribe() 检测store中状态有变化，用来重新让组件render
 28. react-redux: 是官方facebook出品的专门用于react的状态管理库。
     安装： npm i react-redux
-
+    基本使用：
+        （1）明确两个概念：
+            1）UI组件：不能使用redux的任何api,只负责页面的呈现，交互。
+            2）容器组件：负责和redux通信，将结果交给UI组件。
+        （2）如何创建一个容器组件--靠react-redux的connet函数
+            connect(mapStateToProps,mapDispatchToProps)(UI组件)
+                -- mapStateToProps：映射状态，返回值是一个对象
+                -- mapDispatchToProps:映射操作状态的方法，返回的是一个对象
+        （3）备注1：容器组件中的store是靠props传入的，而不是直接import 引入的。
+        （4）备注2: mapDispatchToProps也可以是一个对象。
+29. 
 学到106
