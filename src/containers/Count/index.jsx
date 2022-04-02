@@ -1,6 +1,6 @@
 // 引入connect用于连接UI组件和redux
 import {connect} from 'react-redux';
-import {createIncrementAction, createDecrementAction, createIncrementAsyncAction} from '../../redux/count_action_creator';
+import {createIncrementAction, createDecrementAction, createIncrementAsyncAction} from '../../redux/action/count';
 
 import React, { Component } from 'react'
 class Count extends Component {;
@@ -30,7 +30,8 @@ class Count extends Component {;
     render() {
         return (
         <div>
-            <h1>当前求和为:{this.props.count}</h1>
+            <h2>Count组件</h2>
+            <h4>当前求和为:{this.props.count}, 下面Person组件的人数总和：{this.props.personSum}</h4>
             <select ref={c => this.selectNumber = c}>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -68,7 +69,7 @@ class Count extends Component {;
 //     }
 // )
 export default connect(
-    state => ({count:state}),
+    state => ({count:state.sum, personSum: state.persons.length}),
     // mapDispatchToProps 的一般写法
     // dispatch => ({
     //     jia: (data)=> {

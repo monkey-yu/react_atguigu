@@ -137,6 +137,7 @@
 26. antd自定义主题参考这个学习： https://www.bilibili.com/video/BV1wy4y1D7JT?p=96
 
 27. redux:集中式管理多个组件等共享状态。
+     ![](./picture/redux.png)
     redux是民间发布的一个库，可以与react,vue,angular配合使用。
     安装： npm i redux
     学到3个api: 

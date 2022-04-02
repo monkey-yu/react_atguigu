@@ -1,4 +1,4 @@
-import {INCREMENT, DECREMENT} from './constant';
+import {INCREMENT, DECREMENT} from '../constant';
 // 同步action,返回一个一般对象{}
 export const createIncrementAction = data => ({type:INCREMENT, data});
 export const createDecrementAction = data => ({type:DECREMENT, data});
