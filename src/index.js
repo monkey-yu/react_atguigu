@@ -7,7 +7,7 @@ import App from './App';
 import store from './redux/store';
 import {Provider } from 'react-redux'
 // 渲染App组件到页面
-// 使用Provider，注入store
+// 使用Provider包裹App组件，使其后代组件都能接受到store
 ReactDOM.render(
   <Provider store={store}>
     <App />

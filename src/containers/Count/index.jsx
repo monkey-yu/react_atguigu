@@ -1,31 +1,31 @@
 // 引入connect用于连接UI组件和redux
 import {connect} from 'react-redux';
-import {createIncrementAction, createDecrementAction, createIncrementAsyncAction} from '../../redux/action/count';
+import {increment, decrement, incrementAsync} from '../../redux/action/count';
 
 import React, { Component } from 'react'
 class Count extends Component {;
     // 相加
     increment = ()=> {
         const {value} = this.selectNumber;
-        this.props.jia(value*1);
-        // store.dispatch(createIncrementAction(value*1))
+        this.props.increment(value*1);
+        // store.dispatch(increment(value*1))
     };
     // 相减
     decrement = ()=> {
         const {value} = this.selectNumber;
-        this.props.jian(value*1);
+        this.props.decrement(value*1);
     };
     // 如果当前和数是奇数则加
     incrementIfOdd = ()=> {
         const {value} = this.selectNumber;
         if(this.props.count %2 === 0) return;
-        this.props.jia(value*1);
+        this.props.increment(value*1);
     }
     // 异步相加
     incrementAsync = ()=> {
         const {value} = this.selectNumber;
-        this.props.jiaAsync(value*1,500);
-        // store.dispatch(createIncrementAsyncAction(value*1,500));  
+        this.props.incrementAsync(value*1,500);
+        // store.dispatch(incrementAsync(value*1,500));  
     }
     render() {
         return (
@@ -57,35 +57,36 @@ class Count extends Component {;
 */
 // const mapDispatchToProps = dispatch => (
 //     {
-//         jia: (data)=> {
-//             dispatch(createIncrementAction(data))
+//         increment: (data)=> {
+//             dispatch(increment(data))
 //         },
-//         jian: (data)=> {
-//             dispatch(createDecrementAction(data))
+//         decrement: (data)=> {
+//             dispatch(decrement(data))
 //         },
-//         jiaAsync: (data,time)=> {
-//             dispatch(createIncrementAsyncAction(data,time))
+//         incrementAsync: (data,time)=> {
+//             dispatch(incrementAsync(data,time))
 //         }
 //     }
 // )
 export default connect(
-    state => ({count:state.sum, personSum: state.persons.length}),
+    state => ({count:state.count, personSum: state.persons.length}),
     // mapDispatchToProps 的一般写法
-    // dispatch => ({
-    //     jia: (data)=> {
-    //         dispatch(createIncrementAction(data))
+    // dispatch => ({cc
+    //     increment: (data)=> {
+    //         dispatch(increment(data))
     //     },
-    //     jian: (data)=> {
-    //         dispatch(createDecrementAction(data))
+    //     decrement: (data)=> {
+    //         dispatch(decrement(data))
     //     },
-    //     jiaAsync: (data,time)=> {
-    //         dispatch(createIncrementAsyncAction(data,time))
+    //     incrementAsync: (data,time)=> {
+    //         dispatch(incrementAsync(data,time))
     //     }
     // })
     // mapDispatchToProps的简写 （APi层的优化）
     {
-        jia:createIncrementAction,
-        jian:createDecrementAction,
-        jiaAsync:createIncrementAsyncAction
+        increment,
+        decrement,
+        incrementAsync:incrementAsync
     }
+    // 上面key,value同名触发简写
     )(Count)

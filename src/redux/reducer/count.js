@@ -5,7 +5,7 @@
 import {INCREMENT, DECREMENT} from '../constant';
 // 初始化为0
 const initState = 0
-export default function countReducer(preState = initState,action){
+export default function count(preState = initState,action){
     // console.log('countReducer@@@init')
     const {type,data} = action;
     switch(type){

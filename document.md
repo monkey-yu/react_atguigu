@@ -166,5 +166,7 @@
     （2）无需自己给容器组件传递store,可以使用Provider包裹<App/> 来传递store;
      (3)不用检测state的变化来render组件，react-redux会自动监测；
     （4）mapDispatchToProps可以简写成一个对象。
+30. redux --- 使用combineReducers来组合多个reducer
 
-学到108
+
+学到114

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux';
 import {nanoid } from 'nanoid';
-import { createAddPersonAction } from '../../redux/action/person';
+import { AddPerson } from '../../redux/action/person';
 class Person extends Component {
     addPerson = ()=> {
         const name= this.nameInput.value;
@@ -19,7 +19,7 @@ class Person extends Component {
     return (
       <div>
           <h2>Person组件</h2>
-          <h4>上面Count组件的总和： {this.props.sum}</h4>
+          <h4>上面Count组件的总和： {this.props.count}</h4>
           <input type="text" ref={c => this.nameInput = c}/>
           <input type="number" ref={c => this.ageInput = c}/>
           <button onClick={this.addPerson}>添加</button>
@@ -36,6 +36,6 @@ class Person extends Component {
   }
 }
 export default connect(
-    state => ({persons: state.persons, sum:state.sum}), // 映射状态
-    {add: createAddPersonAction}   // 映射操作状态的方法
+    state => ({persons: state.persons, count:state.count}), // 映射状态
+    {add: AddPerson}   // 映射操作状态的方法
 )(Person)
