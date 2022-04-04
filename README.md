@@ -196,7 +196,25 @@
      return {count:state.count+1}
    },[callback])
    ```
+   
+2. lazy懒加载路由组件
 
+3. 函数式组件：没有自己的this,不能使用state、ref这两大特性。没有生命周期函数。
+    react V16.8版本之后推出了hooks,可以使函数式组件使用state及其他的react特性。
+    
+4. State Hook：
+    （1）State Hook使函数组件也可以有state状态，并进行状态数据的读写操作
+    
+    ```jsx
+    //语法
+    const [xxx,setXxx] = React.useState(initValue);
+    ```
+​	（2）useState的说明：
+        参数：第一次初始化指定的值在内部做缓存；
+        返回值： 包含两个元素的数组，第一个为内部当前状态值，第二个为更新状态值的函数。
+​   （3）setXxx的两种写法：
+​		 setXxx( newValue): 参数为非函数值，直接指定新的状态值，内部用起覆盖原本的值。
+        setXxx(value => newValue):参数为函数，接收原本的状态值，返回新的状态值，内部用起覆盖原来的值。
 
 
 
