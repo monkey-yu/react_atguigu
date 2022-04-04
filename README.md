@@ -236,7 +236,10 @@
         componentDidMount()
         componentDidUpdate()
         componentWillUnmount()
-    
+6. Ref Hook:
+    (1)Ref hook可以在函数组件中存储/查找组件内的标签或任意其他数据
+   （2）语法：const refContainer = React.useRef()
+    (3)作用：保存标签对象，功能与React.createRef()一样
 
 
 
