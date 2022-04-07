@@ -236,13 +236,42 @@
         componentDidMount()
         componentDidUpdate()
         componentWillUnmount()
+    
 6. Ref Hook:
     (1)Ref hook可以在函数组件中存储/查找组件内的标签或任意其他数据
    （2）语法：const refContainer = React.useRef()
     (3)作用：保存标签对象，功能与React.createRef()一样
+   
+7. Fragment： Fragments 允许你将子列表分组，而无需向 DOM 添加额外节点。
 
+8. Context: 一种组件间通信方式，常用于【祖组件】与【后代组件】间通信。
+    使用：
+    
+    ```jsx
+    1) 创建Context对象
+    	const XxxContext = React.createContext();
+    2)渲染子组时，外面包裹XxxContext.Provider,通过value属性给后代组件传递数据：
+    	<XxxContext.Provider value={}>
+      	子组件
+      </XxxContext.Provider>
+    3）后代组件读取数据：
+    	// 第一种方式：仅适用于类组件
+    	static contextType = XxxContext  // 声明接收context
+    	this.context // 读取context中的数据
+    	// 第二种方式：函数组件与类组件都可用
+    	<XxxContext.Consumer>
+            {
+            value => {
+                // value就是context中的value数据 
+                要显示的内容
+            }
+        }
+        </XxxContext.Consumer>
+    ```
+    注意：在应用开发中，一般不用context,一般都用它的封装react插件（react-redux）。
 
+    
 
 
 备注： 尚硅谷 react老师笔记 https://blog.csdn.net/weixin_44987713/article/details/114990470
-学到117
+学到122
