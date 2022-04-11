@@ -269,9 +269,25 @@
         </XxxContext.Consumer>
     ```
     注意：在应用开发中，一般不用context,一般都用它的封装react插件（react-redux）。
+9. 组件优化
+    Component的2个问题：
+    （1）只要执行setState(),即使不改变状态，组件也会重新render;
+     (2) 只当前组件重新render(),就会自动重新render子组件，纵使子组件没有用到父组件的数据。
+    效率高的做法：
+        只有props或state数据发生改变，才重新render()
+    解决：
+    方法一：
+        重写shouldComponentUpdate()方法，比较新旧state或props数据，如果有变化才返回true,否则false.
+    方法二：
+        使用PureComponent.PureComponent重写了shouldComponentUpdate(),只有state/props有变化才render()。
+        注意：
+            a.只是进行state和props数据的浅比较，如果只是数据对象内部数据变了，返回false。
+            b. 不要直接修改state数据，而是要产生新数据。
+    项目中一般使用PureComponent来优化。
+10. 
 
     
 
 
 备注： 尚硅谷 react老师笔记 https://blog.csdn.net/weixin_44987713/article/details/114990470
-学到122
+学到124
